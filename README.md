@@ -26,7 +26,7 @@ pip install yt-dlp termcolor
 3. Scripti aşağıdaki komutla çalıştırın:
 
 ```sh
-python youtube_video_downloader.py
+python downloadtube.py
 ```
 
 4. İstenildiğinde YouTube video URL'sini girin.
@@ -43,7 +43,7 @@ Bu Python scriptini bağımsız bir `.exe` dosyasına dönüştürmek için `PyI
    ```
 2. Aşağıdaki komutu çalıştırarak çalıştırılabilir dosyayı oluşturun:
    ```sh
-   pyinstaller --onefile youtube_video_downloader.py
+   pyinstaller --onefile downloadtube.py
    ```
 3. `.exe` dosyası `dist` klasöründe bulunacaktır.
 
