@@ -1,4 +1,4 @@
-# YouTube Video İndirici
+# DownloadTube
 
 Bu Python scripti, videonun kalitesini seçmenize ve indirme konumunu bir GUI klasör seçme penceresi kullanarak belirlemenize olanak tanıyan basit ama güçlü bir YouTube video indiricisidir.
 
