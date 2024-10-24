@@ -6,7 +6,7 @@ from tkinter.filedialog import askdirectory
 from termcolor import colored
 
 def choose_video_quality(formats):
-    print(colored("\nMevcut Kalite Seçenekleri:\n", attrs=['underline', 'bold']))
+    print(colored("\nMevcut Kalite Seçenekleri:", attrs=['underline']))
     for i, format in enumerate(formats):
         print(f"[{i}] {format['format']} - {format['ext']}")
     
@@ -46,8 +46,13 @@ def main():
     print("\nVideo indiriliyor...")
     try:
         ydl_opts = {
-            'format': chosen_format['format_id'],
-            'outtmpl': os.path.join(download_location, '%(title)s.%(ext)s')
+            'format': f"{chosen_format['format_id']}+bestaudio",
+            'outtmpl': os.path.join(download_location, '%(title)s.%(ext)s'),
+            'merge_output_format': 'mp4',
+            'postprocessors': [{
+                'key': 'FFmpegVideoConvertor',
+                'preferedformat': 'mp4',
+            }]
         }
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
